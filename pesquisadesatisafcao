@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pesquisa de Satisfação - Posto Marinheiro ⚓</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #007bff, #cce5ff);
+      color: #003366;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Âncora de fundo */
+    body::before {
+      content: "⚓";
+      position: fixed;
+      font-size: 350px;
+      color: rgba(255, 255, 255, 0.15);
+      bottom: -80px;
+      right: -50px;
+      transform: rotate(-10deg);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    h1 {
+      background-color: #0056b3;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      z-index: 1;
+      text-align: center;
+      width: fit-content;
+    }
+
+    form {
+      background-color: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 500px;
+      margin-top: 25px;
+      z-index: 1;
+      position: relative;
+      overflow-y: auto;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+      margin-top: 20px;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 25px;
+      width: 100%;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #004a99;
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #002244;
+      z-index: 1;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    a {
+      color: #0056b3;
+      text-decoration: none;
+    }
+
+    /* Melhor adaptação mobile */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 20px;
+        padding: 12px;
+      }
+
+      body::before {
+        font-size: 280px;
+        right: -40px;
+        bottom: -60px;
+      }
+
+      form {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Pesquisa de Satisfação - Posto Marinheiro ⚓</h1>
+
+  <form action="https://formspree.io/f/xovyabol" method="POST">
+    <label>Nome completo:</label>
+    <input type="text" name="nome" placeholder="Digite seu nome" required>
+
+    <label>E-mail ou telefone (para contato do sorteio):</label>
+    <input type="text" name="contato" placeholder="Digite seu e-mail ou número" required>
+
+    <label>Placa do veículo:</label>
+    <input type="text" name="placa" placeholder="XXX0X00" required>
+
+    <label>1. Como você avalia o atendimento da equipe?</label>
+    <div class="options">
+      <label><input type="radio" name="atendimento" value="Excelente" required> Excelente</label>
+      <label><input type="radio" name="atendimento" value="Bom"> Bom</label>
+      <label><input type="radio" name="atendimento" value="Regular"> Regular</label>
+      <label><input type="radio" name="atendimento" value="Ruim"> Ruim</label>
+    </div>
+
+    <label>2. O tempo de espera foi satisfatório?</label>
+    <div class="options">
+      <label><input type="radio" name="espera" value="Sim" required> Sim</label>
+      <label><input type="radio" name="espera" value="Mais ou menos"> Mais ou menos</label>
+      <label><input type="radio" name="espera" value="Não"> Não</label>
+    </div>
+
+    <label>3. Você ficou satisfeito com a limpeza e organização do posto?</label>
+    <div class="options">
+      <label><input type="radio" name="limpeza" value="Sim" required> Sim</label>
+      <label><input type="radio" name="limpeza" value="Mais ou menos"> Mais ou menos</label>
+      <label><input type="radio" name="limpeza" value="Não"> Não</label>
+    </div>
+
+    <label>4. Como você avalia a cordialidade e simpatia dos atendentes?</label>
+    <div class="options">
+      <label><input type="radio" name="cordialidade" value="Excelente" required> Excelente</label>
+      <label><input type="radio" name="cordialidade" value="Boa"> Boa</label>
+      <label><input type="radio" name="cordialidade" value="Regular"> Regular</label>
+      <label><input type="radio" name="cordialidade" value="Ruim"> Ruim</label>
+    </div>
+
+    <label>5. Você recomendaria o Posto Marinheiro a outras pessoas?</label>
+    <div class="options">
+      <label><input type="radio" name="recomendacao" value="Com certeza" required> Com certeza</label>
+      <label><input type="radio" name="recomendacao" value="Talvez"> Talvez</label>
+      <label><input type="radio" name="recomendacao" value="Não"> Não</label>
+    </div>
+
+    <label>6. Por que você escolheu o nosso posto?</label>
+    <div class="options">
+      <label><input type="radio" name="motivo" value="Gerente" required> Pelo nosso gerente</label>
+      <label><input type="radio" name="motivo" value="Qualidade do combustível"> Pela qualidade do combustível</label>
+      <label><input type="radio" name="motivo" value="Marca Petrobrás"> Pela marca Petrobrás</label>
+      <label><input type="radio" name="motivo" value="Atendimento dos frentistas"> Pelo atendimento dos frentistas</label>
+    </div>
+
+    <label>Qual o nosso ponto FORTE?</label>
+    <input type="text" name="ponto_forte" placeholder="Digite aqui" required>
+
+    <label>Qual o nosso ponto FRACO?</label>
+    <input type="text" name="ponto_fraco" placeholder="Digite aqui" required>
+
+    <button type="submit">Enviar e Participar do Sorteio ⚓</button>
+  </form>
+
+  <footer>
+    <p>⚓ Posto Marinheiro — Sua opinião nos ajuda a navegar melhor!</p>
+    <p><strong>Participe e concorra a prêmios!</strong></p>
+  </footer>
+</body>
+</html>
